@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "ModifyCenter";
+}
+
+
+<h2>Modify Center</h2>
+<a href="~/Home/Index">HOME</a>
+<br />
+<p style="color : red">@ViewBag.Error</p>
+<form action="~/Vlasnik/ModifyCenterAction" method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>
+                <input type="text" name="name" value="@ViewBag.center.Name" readonly />
+            </td>
+        </tr>
+        <tr>
+            <td>Street:</td>
+            <td>
+                <input type="text" name="street" value="@ViewBag.center.Adress.Split(' ')[0]" />
+            </td>
+        </tr>
+        <tr>
+            <td>Street number:</td>
+            <td>
+                <input type="text" name="snum" value="@ViewBag.center.Adress.Split(' ')[1]" />
+            </td>
+        </tr>
+        <tr>
+            <td>City:</td>
+            <td>
+                <input type="text" name="city" value="@ViewBag.center.Adress.Split(' ')[2]" />
+            </td>
+        </tr>
+        <tr>
+            <td>Postal code:</td>
+            <td>
+                <input type="text" name="pcode" value="@ViewBag.center.Adress.Split(' ')[3]" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>Founded:</td>
+            <td>
+                <input type="text" name="year" value="@ViewBag.center.Year" />
+            </td>
+        </tr>
+        <tr>
+            <td>Monthly price:</td>
+            <td>
+                <input type="text" name="mprice" value="@ViewBag.center.MonthlyPrice" />
+            </td>
+        </tr>
+        <tr>
+            <td>Yearly price:</td>
+            <td>
+                <input type="text" name="yprice" value="@ViewBag.center.YearlyPrice" />
+            </td>
+        </tr>
+        <tr>
+            <td>One training price:</td>
+            <td>
+                <input type="text" name="oneprice" value="@ViewBag.center.OneTrainingPrice" />
+            </td>
+        </tr>
+        <tr>
+            <td>Group training price:</td>
+            <td>
+                <input type="text" name="gprice" value="@ViewBag.center.GroupTrainingPrice" />
+            </td>
+        </tr>
+        <tr>
+            <td>Price with fitness trainer:</td>
+            <td>
+                <input type="text" name="tprice" value="@ViewBag.center.AssistantTrainingPrice" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Modify" />
+            </td>
+        </tr>
+    </table>
+</form>

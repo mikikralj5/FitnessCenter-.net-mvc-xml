@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "TrainerGroupTrainings";
+}
+
+<h2>Trainer Group Trainings</h2>
+<a href="~/Home/Index">HOME</a>
+<br />
+@if (ViewBag.trainings.Count == 0)
+{
+    <h1>No trainings</h1>
+}
+else
+{
+
+    <p style="color : red">@ViewBag.Error</p>
+
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td>Training type</td>
+            <td>Fitness center</td>
+            <td>Training duration</td>
+            <td>Training date and time</td>
+            <td>Max participants</td>
+        </tr>
+        @foreach (var item in ViewBag.trainings)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.TrainingType</td>
+                <td>@item.FCenterId</td>
+                <td>@item.TrainingDuration</td>
+                <td>@item.TrainingDateTime</td>
+                <td>@item.MaxParticipants</td>
+                <td>
+                    <form method="post" action="~/Trener/ModifyGroupTraining">
+                        <input type="hidden" value="@item.Name" name="trainingName" />
+                        <input type="submit" value="Modify" />
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="~/Trener/DeleteTraining">
+                        <input type="hidden" value="@item.Name" name="trainingName" />
+                        <input type="submit" value="Delete" />
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="~/Trener/ParticipantList">
+                        <input type="hidden" value="@item.Name" name="trainingName" />
+                        <input type="submit" value="Participants" />
+                    </form>
+                </td>
+            </tr>
+        }
+
+    </table>
+}

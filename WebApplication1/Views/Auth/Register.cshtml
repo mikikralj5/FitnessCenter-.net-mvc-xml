@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+@if (ViewBag.user == null)
+{
+    <a href="~/Home/Index">Continue without registration</a>
+    <br />
+    <a href="~/Auth/Login">Login</a>
+    <br />
+}
+
+<p style="color : red">@ViewBag.Error</p>
+<form action="~/Auth/RegisterUser" method="post">
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td>
+                <input type="text" name="username" />
+                @if (ViewBag.user != null && ViewBag.user.UserRole.ToString() == "VLASNIK")
+                {
+                    <input type="hidden" name="role" value="TRENER" />
+                }
+                else
+                {
+                    <input type="hidden" name="role" value="POSETILAC" />
+                }
+
+            </td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password" /></td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><input onkeypress="return /[a-z]/i.test(event.key)" type="text" name="name" /></td>
+        </tr>
+        <tr>
+            <td>Last name:</td>
+            <td><input onkeypress="return /[a-z]/i.test(event.key)" type="text" name="lastName" /></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td>
+                <select id="type" name="gender">
+                    <option value="MALE">Male</option>
+                    <option value="FEMALE">Female</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" name="email" /></td>
+        </tr>
+        <tr>
+            <td>Date of birth:</td>
+            <td><input type="date" name="dateOfBirth" /></td>
+        </tr>
+        @if (ViewBag.user != null && ViewBag.user.UserRole.ToString() == "VLASNIK")
+        {
+            <tr>
+                <td>
+                    <select name="center">
+                        @foreach (var item in ViewBag.centers)
+                        {
+                            <option value="@item.Name">@item.Name</option>
+                        }
+                    </select>
+
+                </td>
+            </tr>
+        }
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Register" />
+            </td>
+        </tr>
+    </table>
+</form>

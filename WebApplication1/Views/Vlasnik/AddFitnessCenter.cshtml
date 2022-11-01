@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.Title = "AddFitnessCenter";
+}
+
+
+<h2>Add Fitness Center</h2>
+<a href="~/Home/Index">HOME</a>
+<br />
+<p style="color : red">@ViewBag.Error</p>
+<form action="~/Vlasnik/AddNewCenter" method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>
+                <input type="text" name="name" />
+            </td>
+        </tr>
+        <tr>
+            <td>Street:</td>
+            <td>
+                <input type="text" name="street" />
+            </td>
+        </tr>
+        <tr>
+            <td>Street number:</td>
+            <td>
+                <input type="text" name="snum" required onkeypress="return /[0-9]/i.test(event.key)"/>
+            </td>
+        </tr>
+        <tr>
+            <td>City:</td>
+            <td>
+                <input type="text" name="city" />
+            </td>
+        </tr>
+        <tr>
+            <td>Postal code:</td>
+            <td>
+                <input type="text" name="pcode" required onkeypress="return /[0-9]/i.test(event.key)"/>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Founded:</td>
+            <td>
+                <input type="text" name="year" required onkeypress="return /[0-9]/i.test(event.key)"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Monthly price:</td>
+            <td>
+                <input type="text" name="mprice" required onkeypress="return /[0-9]/i.test(event.key)"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Yearly price:</td>
+            <td>
+                <input type="text" name="yprice" required onkeypress="return /[0-9]/i.test(event.key)" />
+            </td>
+        </tr>
+        <tr>
+            <td>One training price:</td>
+            <td>
+                <input type="text" name="oneprice" required onkeypress="return /[0-9]/i.test(event.key)"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Group training price:</td>
+            <td>
+                <input type="text" name="gprice" required onkeypress="return /[0-9]/i.test(event.key)"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Price with fitness trainer:</td>
+            <td>
+                <input type="text" name="tprice" required onkeypress="return /[0-9]/i.test(event.key)"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Add" />
+            </td>
+        </tr>
+    </table>
+</form>

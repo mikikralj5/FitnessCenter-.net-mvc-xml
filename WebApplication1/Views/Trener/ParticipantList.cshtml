@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "ParticipantList";
+}
+
+<h2>Participant List</h2>
+<a href="~/Home/Index">HOME</a>
+<br />
+@if (ViewBag.participants.Count == 0)
+{
+    <h1>No participants</h1>
+}
+else
+{
+    <ul>
+        @foreach (var item in ViewBag.participants)
+        {
+            <li>@item</li>
+        }
+    </ul>
+
+}

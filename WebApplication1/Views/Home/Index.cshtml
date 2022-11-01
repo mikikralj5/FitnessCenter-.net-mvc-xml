@@ -1,0 +1,157 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>Fitness center explorer</h1>
+
+@if (ViewBag.user != null)
+{
+    if (ViewBag.user.UserRole.ToString() == "VLASNIK")
+    {
+        <a href="~/Vlasnik/AddFitnessCenter">Add Center</a>
+        <br />
+        <a href="~/Vlasnik/VlasnikCenters">Vlasnik centers</a>
+        <br />
+        <a href="~/Auth/Register">Register trainer</a>
+        <br />
+        <a href="~/Vlasnik/TrainersTable">Trainer list</a>
+        <br />
+        <a href="~/Vlasnik/PendingCommentRequests">Pending comment requests</a>
+        <br />
+    }
+    else if (ViewBag.user.UserRole.ToString() == "TRENER")
+    {
+        <a href="~/Trener/AddGroupTraining">Add Group Training</a>
+        <br />
+        <a href="~/Trener/TrainerGroupTrainings">Future trainings overview</a>
+        <br />
+        <a href="~/Trener/TrainerPastTrainings">Past trainings overview</a>
+        <br />
+    }
+    else if (ViewBag.user.UserRole.ToString() == "POSETILAC")
+    {
+        <a href="~/Posetilac/PosetilacPastTrainings">Past trainings overview</a>
+        <br />
+    }
+
+    <a href="~/Auth/ModifyUser">Profile overview</a>
+    <br />
+    <a href="~/Auth/Logout">Logout</a>
+    <br />
+
+}
+else
+{
+    <a href="~/Auth/Login">Login</a>
+    <br />
+}
+
+
+
+@if (ViewBag.centers.Count == 0)
+{
+    <h1>No centers</h1>
+}
+else
+{
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td>Adress</td>
+            <td>Founded</td>
+            <td> </td>
+        </tr>
+        @foreach (var item in ViewBag.centers)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Adress.Split(' ')[0] @item.Adress.Split(' ')[1] </td>
+                <td>@item.Year</td>
+                <td>
+                    <form method="post" action="~/Home/CenterDetails">
+                        <input type="hidden" value="@item.Name" name="centerName" />
+                        <input type="submit" value="Details" />
+                    </form>
+                </td>
+                @if (ViewBag.user != null && ViewBag.user.UserRole.ToString() == "POSETILAC")
+                {
+                    <td>
+                        <form method="post" action="~/Posetilac/AddComment">
+                            <input type="hidden" value="@item.Name" name="centerName" />
+                            <input type="submit" value="Comment" />
+                        </form>
+                    </td>
+                }
+            </tr>
+        }
+    </table>
+}
+<br />
+
+<form action="~/Home/SearchCenters" method="post">
+    <table border="1">
+        <tr>
+            <th colspan="2" style="font-size : 150%; text-align : center; background-color : lightgreen">
+                Search
+            </th>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>
+                <input type="text" name="nameSearch" />
+            </td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>
+                <input type="text" name="adrsSearch" />
+            </td>
+        </tr>
+        <tr>
+            <td>Year founded </td>
+            <td>
+                Min: <input type="text" name="yearSearchMin" />
+                Max: <input type="text" name="yearSearchMax" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="SEARCH" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+
+<br />
+<form action="~/Home/NameSort" method="post">
+    Sort by name
+    <select id="type" name="param" required>
+        <option value="ASCENDING">Ascending</option>
+        <option value="DESCENDING">Descending</option>
+    </select>
+    <input type="submit" value="Sort" />
+</form>
+<br />
+<form action="~/Home/AdressSort" method="post">
+    Sort by address
+    <select id="type" name="param" required>
+        <option value="ASCENDING">Ascending</option>
+        <option value="DESCENDING">Descending</option>
+    </select>
+    <input type="submit" value="Sort" />
+</form>
+<br />
+<form action="~/Home/YearSort" method="post">
+    Sort by year founded
+    <select id="type" name="param" required>
+        <option value="ASCENDING">Ascending</option>
+        <option value="DESCENDING">Descending</option>
+    </select>
+    <input type="submit" value="Sort" />
+</form>
+<br />
+<form action="~/Home/Index" method="post">
+    <input type="submit" value="Clear filter" />
+</form>
+<br />

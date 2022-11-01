@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "VlasnikCenters";
+}
+
+
+<h2>Vlasnik Centers</h2>
+<a href="~/Home/Index">HOME</a>
+<br />
+<p style="color : red">@ViewBag.Error</p>
+@if (ViewBag.vlasnikCenters.Count == 0)
+{
+    <h1>No centers</h1>
+}
+else
+{
+
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td>Adress</td>
+            <td>Founded</td>
+            <td>Monthly price</td>
+            <td>Yearly price</td>
+            <td>One training price</td>
+            <td>Group training price</td>
+            <td>Training with assitant price</td>
+        </tr>
+        @foreach (var item in ViewBag.vlasnikCenters)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Adress</td>
+                <td>@item.Year</td>
+                <td>@item.MonthlyPrice</td>
+                <td>@item.YearlyPrice</td>
+                <td>@item.OneTrainingPrice</td>
+                <td>@item.GroupTrainingPrice</td>
+                <td>@item.AssistantTrainingPrice</td>
+                <td>
+                    <form method="post" action="~/Vlasnik/ModifyCenter">
+                        <input type="hidden" value="@item.Name" name="centerName" />
+                        <input type="submit" value="Modify" />
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="~/Vlasnik/DeleteCenter">
+                        <input type="hidden" value="@item.Name" name="centerName" />
+                        <input type="submit" value="Delete" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+}

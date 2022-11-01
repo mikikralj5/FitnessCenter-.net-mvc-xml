@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "ModifyUser";
+}
+
+
+<h2>Modify User</h2>
+<a href="~/Home/Index">HOME</a>
+<br />
+@if (ViewBag.Error != null)
+{
+    <p style="color : red">@ViewBag.Error</p>
+}
+
+<form action="~/Auth/ModifyUserAction" method="post">
+    <table>
+        <tr>
+            <td>Username:</td>
+            <td>
+                <input type="text" name="username" value="@ViewBag.user.Username" readonly />
+            </td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><input type="password" name="password" value="@ViewBag.user.Password" /></td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td><input onkeypress="return /[a-z]/i.test(event.key)" type="text" name="name" value="@ViewBag.user.Name" /></td>
+        </tr>
+        <tr>
+            <td>Last name:</td>
+            <td><input onkeypress="return /[a-z]/i.test(event.key)" type="text" name="lastName" value="@ViewBag.user.LastName" /></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td>
+                <select id="type" name="gender">
+                    <option value="MALE">Male</option>
+                    <option value="FEMALE">Female</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><input type="email" name="email" value="@ViewBag.user.Email" /></td>
+        </tr>
+        <tr>
+            <td>Date of birth:</td>
+            <td><input type="date" name="dateOfBirth" value="@ViewBag.user.DateOfBirth" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Modify" />
+            </td>
+        </tr>
+    </table>
+</form>

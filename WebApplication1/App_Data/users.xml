@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <Username>v</Username>
+    <Password>v</Password>
+    <Name>v</Name>
+    <LastName>v</LastName>
+    <Gender>MALE</Gender>
+    <DateOfBirth>24/06/2022</DateOfBirth>
+    <Email>v@v</Email>
+    <UserRole>VLASNIK</UserRole>
+    <IsBlocked>false</IsBlocked>
+    <ValsnikCenters>
+      <FitnessCenter>
+        <Name>Fitness Centar 1</Name>
+        <Adress>Ulica 1 Novi Sad 21000</Adress>
+        <Year>2005</Year>
+        <VlasnikId>v</VlasnikId>
+        <MonthlyPrice>20</MonthlyPrice>
+        <YearlyPrice>200</YearlyPrice>
+        <OneTrainingPrice>5</OneTrainingPrice>
+        <GroupTrainingPrice>7</GroupTrainingPrice>
+        <AssistantTrainingPrice>8</AssistantTrainingPrice>
+        <IsDelted>false</IsDelted>
+        <Comments>
+          <Comment>
+            <Id>1</Id>
+            <CreatorUsername>p</CreatorUsername>
+            <FCenterId>Fitness Centar 1</FCenterId>
+            <CommentText>super je</CommentText>
+            <Rating>5</Rating>
+            <CommentState>ACCEPTED</CommentState>
+          </Comment>
+        </Comments>
+      </FitnessCenter>
+      <FitnessCenter>
+        <Name>Fitness Centar 2</Name>
+        <Adress>Ulica 2 Novi Sad 21000</Adress>
+        <Year>2015</Year>
+        <VlasnikId>v</VlasnikId>
+        <MonthlyPrice>300</MonthlyPrice>
+        <YearlyPrice>30</YearlyPrice>
+        <OneTrainingPrice>10</OneTrainingPrice>
+        <GroupTrainingPrice>15</GroupTrainingPrice>
+        <AssistantTrainingPrice>17</AssistantTrainingPrice>
+        <IsDelted>false</IsDelted>
+        <Comments />
+      </FitnessCenter>
+    </ValsnikCenters>
+    <TrenerCenter>
+      <MonthlyPrice>0</MonthlyPrice>
+      <YearlyPrice>0</YearlyPrice>
+      <OneTrainingPrice>0</OneTrainingPrice>
+      <GroupTrainingPrice>0</GroupTrainingPrice>
+      <AssistantTrainingPrice>0</AssistantTrainingPrice>
+      <IsDelted>false</IsDelted>
+      <Comments />
+    </TrenerCenter>
+    <PosetiocGroupTrainings />
+    <TrenerGroupTrainings />
+  </User>
+  <User>
+    <Username>v1</Username>
+    <Password>v</Password>
+    <Name>v</Name>
+    <LastName>v</LastName>
+    <Gender>MALE</Gender>
+    <DateOfBirth>24/06/2022</DateOfBirth>
+    <Email>v@v</Email>
+    <UserRole>VLASNIK</UserRole>
+    <IsBlocked>false</IsBlocked>
+    <ValsnikCenters>
+      <FitnessCenter>
+        <Name>Fitness Centar 3</Name>
+        <Adress>Ulica 3 Novi Sad 21000</Adress>
+        <Year>1980</Year>
+        <VlasnikId>v</VlasnikId>
+        <MonthlyPrice>10</MonthlyPrice>
+        <YearlyPrice>100</YearlyPrice>
+        <OneTrainingPrice>2</OneTrainingPrice>
+        <GroupTrainingPrice>3</GroupTrainingPrice>
+        <AssistantTrainingPrice>4</AssistantTrainingPrice>
+        <IsDelted>false</IsDelted>
+        <Comments />
+      </FitnessCenter>
+    </ValsnikCenters>
+    <TrenerCenter>
+      <MonthlyPrice>0</MonthlyPrice>
+      <YearlyPrice>0</YearlyPrice>
+      <OneTrainingPrice>0</OneTrainingPrice>
+      <GroupTrainingPrice>0</GroupTrainingPrice>
+      <AssistantTrainingPrice>0</AssistantTrainingPrice>
+      <IsDelted>false</IsDelted>
+      <Comments />
+    </TrenerCenter>
+    <PosetiocGroupTrainings />
+    <TrenerGroupTrainings />
+  </User>
+  <User>
+    <Username>p</Username>
+    <Password>p</Password>
+    <Name>p</Name>
+    <LastName>p</LastName>
+    <Gender>MALE</Gender>
+    <DateOfBirth>30/06/2022</DateOfBirth>
+    <Email>p@p</Email>
+    <UserRole>POSETILAC</UserRole>
+    <IsBlocked>false</IsBlocked>
+    <ValsnikCenters />
+    <TrenerCenter>
+      <MonthlyPrice>0</MonthlyPrice>
+      <YearlyPrice>0</YearlyPrice>
+      <OneTrainingPrice>0</OneTrainingPrice>
+      <GroupTrainingPrice>0</GroupTrainingPrice>
+      <AssistantTrainingPrice>0</AssistantTrainingPrice>
+      <IsDelted>false</IsDelted>
+      <Comments />
+    </TrenerCenter>
+    <PosetiocGroupTrainings>
+      <GroupTraining>
+        <Name>Trening na jezeru</Name>
+        <TrainingType>trcanje</TrainingType>
+        <FCenterId>Fitness Centar 1</FCenterId>
+        <TrainingDuration>60</TrainingDuration>
+        <TrainingDateTime>04/07/2022 13:10</TrainingDateTime>
+        <MaxParticipants>3</MaxParticipants>
+        <IsDeleted>false</IsDeleted>
+        <Participants>
+          <string>p</string>
+          <string>p1</string>
+        </Participants>
+      </GroupTraining>
+      <GroupTraining>
+        <Name>Trening u balonu</Name>
+        <TrainingType>tenis</TrainingType>
+        <FCenterId>Fitness Centar 2</FCenterId>
+        <TrainingDuration>90</TrainingDuration>
+        <TrainingDateTime>05/07/2022 09:12</TrainingDateTime>
+        <MaxParticipants>2</MaxParticipants>
+        <IsDeleted>false</IsDeleted>
+        <Participants>
+          <string>p</string>
+        </Participants>
+      </GroupTraining>
+    </PosetiocGroupTrainings>
+    <TrenerGroupTrainings />
+  </User>
+  <User>
+    <Username>t</Username>
+    <Password>t</Password>
+    <Name>t</Name>
+    <LastName>t</LastName>
+    <Gender>MALE</Gender>
+    <DateOfBirth>24/06/2022</DateOfBirth>
+    <Email>t@t</Email>
+    <UserRole>TRENER</UserRole>
+    <IsBlocked>false</IsBlocked>
+    <ValsnikCenters />
+    <TrenerCenter>
+      <Name>Fitness Centar 1</Name>
+      <Adress>Ulica 1 Novi Sad 21000</Adress>
+      <Year>2005</Year>
+      <VlasnikId>v</VlasnikId>
+      <MonthlyPrice>20</MonthlyPrice>
+      <YearlyPrice>200</YearlyPrice>
+      <OneTrainingPrice>5</OneTrainingPrice>
+      <GroupTrainingPrice>7</GroupTrainingPrice>
+      <AssistantTrainingPrice>8</AssistantTrainingPrice>
+      <IsDelted>false</IsDelted>
+      <Comments>
+        <Comment>
+          <Id>1</Id>
+          <CreatorUsername>p</CreatorUsername>
+          <FCenterId>Fitness Centar 1</FCenterId>
+          <CommentText>super je</CommentText>
+          <Rating>5</Rating>
+          <CommentState>ACCEPTED</CommentState>
+        </Comment>
+      </Comments>
+    </TrenerCenter>
+    <PosetiocGroupTrainings />
+    <TrenerGroupTrainings>
+      <GroupTraining>
+        <Name>Trening na jezeru</Name>
+        <TrainingType>trcanje</TrainingType>
+        <FCenterId>Fitness Centar 1</FCenterId>
+        <TrainingDuration>60</TrainingDuration>
+        <TrainingDateTime>04/07/2022 13:10</TrainingDateTime>
+        <MaxParticipants>3</MaxParticipants>
+        <IsDeleted>false</IsDeleted>
+        <Participants>
+          <string>p</string>
+          <string>p1</string>
+        </Participants>
+      </GroupTraining>
+      <GroupTraining>
+        <Name>Trening u sali</Name>
+        <TrainingType>rukomet</TrainingType>
+        <FCenterId>Fitness Centar 1</FCenterId>
+        <TrainingDuration>90</TrainingDuration>
+        <TrainingDateTime>05/07/2022 13:11</TrainingDateTime>
+        <MaxParticipants>1</MaxParticipants>
+        <IsDeleted>false</IsDeleted>
+        <Participants>
+          <string>p1</string>
+        </Participants>
+      </GroupTraining>
+      <GroupTraining>
+        <Name>Trening na sljaci</Name>
+        <TrainingType>tenis</TrainingType>
+        <FCenterId>Fitness Centar 1</FCenterId>
+        <TrainingDuration>90</TrainingDuration>
+        <TrainingDateTime>29/06/2022 13:18</TrainingDateTime>
+        <MaxParticipants>2</MaxParticipants>
+        <IsDeleted>false</IsDeleted>
+        <Participants />
+      </GroupTraining>
+      <GroupTraining>
+        <Name>Trening u sumi</Name>
+        <TrainingType>zgibovi</TrainingType>
+        <FCenterId>Fitness Centar 1</FCenterId>
+        <TrainingDuration>90</TrainingDuration>
+        <TrainingDateTime>29/06/2022 13:18</TrainingDateTime>
+        <MaxParticipants>5</MaxParticipants>
+        <IsDeleted>false</IsDeleted>
+        <Participants />
+      </GroupTraining>
+    </TrenerGroupTrainings>
+  </User>
+  <User>
+    <Username>t1</Username>
+    <Password>t</Password>
+    <Name>t</Name>
+    <LastName>t</LastName>
+    <Gender>MALE</Gender>
+    <DateOfBirth>25/06/2022</DateOfBirth>
+    <Email>t@t</Email>
+    <UserRole>TRENER</UserRole>
+    <IsBlocked>false</IsBlocked>
+    <ValsnikCenters />
+    <TrenerCenter>
+      <Name>Fitness Centar 2</Name>
+      <Adress>Ulica 2 Novi Sad 21000</Adress>
+      <Year>2015</Year>
+      <VlasnikId>v</VlasnikId>
+      <MonthlyPrice>300</MonthlyPrice>
+      <YearlyPrice>30</YearlyPrice>
+      <OneTrainingPrice>10</OneTrainingPrice>
+      <GroupTrainingPrice>15</GroupTrainingPrice>
+      <AssistantTrainingPrice>17</AssistantTrainingPrice>
+      <IsDelted>false</IsDelted>
+      <Comments />
+    </TrenerCenter>
+    <PosetiocGroupTrainings />
+    <TrenerGroupTrainings>
+      <GroupTraining>
+        <Name>Trening u balonu</Name>
+        <TrainingType>tenis</TrainingType>
+        <FCenterId>Fitness Centar 2</FCenterId>
+        <TrainingDuration>90</TrainingDuration>
+        <TrainingDateTime>05/07/2022 09:12</TrainingDateTime>
+        <MaxParticipants>2</MaxParticipants>
+        <IsDeleted>false</IsDeleted>
+        <Participants>
+          <string>p</string>
+        </Participants>
+      </GroupTraining>
+    </TrenerGroupTrainings>
+  </User>
+  <User>
+    <Username>p1</Username>
+    <Password>p</Password>
+    <Name>p</Name>
+    <LastName>p</LastName>
+    <Gender>MALE</Gender>
+    <DateOfBirth>10/06/2022</DateOfBirth>
+    <Email>p@p</Email>
+    <UserRole>POSETILAC</UserRole>
+    <IsBlocked>false</IsBlocked>
+    <ValsnikCenters />
+    <TrenerCenter>
+      <MonthlyPrice>0</MonthlyPrice>
+      <YearlyPrice>0</YearlyPrice>
+      <OneTrainingPrice>0</OneTrainingPrice>
+      <GroupTrainingPrice>0</GroupTrainingPrice>
+      <AssistantTrainingPrice>0</AssistantTrainingPrice>
+      <IsDelted>false</IsDelted>
+      <Comments />
+    </TrenerCenter>
+    <PosetiocGroupTrainings>
+      <GroupTraining>
+        <Name>Trening na jezeru</Name>
+        <TrainingType>trcanje</TrainingType>
+        <FCenterId>Fitness Centar 1</FCenterId>
+        <TrainingDuration>60</TrainingDuration>
+        <TrainingDateTime>04/07/2022 13:10</TrainingDateTime>
+        <MaxParticipants>3</MaxParticipants>
+        <IsDeleted>false</IsDeleted>
+        <Participants>
+          <string>p</string>
+          <string>p1</string>
+        </Participants>
+      </GroupTraining>
+      <GroupTraining>
+        <Name>Trening u sali</Name>
+        <TrainingType>rukomet</TrainingType>
+        <FCenterId>Fitness Centar 1</FCenterId>
+        <TrainingDuration>90</TrainingDuration>
+        <TrainingDateTime>05/07/2022 13:11</TrainingDateTime>
+        <MaxParticipants>1</MaxParticipants>
+        <IsDeleted>false</IsDeleted>
+        <Participants>
+          <string>p1</string>
+        </Participants>
+      </GroupTraining>
+    </PosetiocGroupTrainings>
+    <TrenerGroupTrainings />
+  </User>
+</ArrayOfUser>

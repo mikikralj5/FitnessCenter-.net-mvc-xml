@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "PendingCommentRequests";
+}
+
+<h2>Pending Comment Requests</h2>
+<a href="~/Home/Index">HOME</a>
+<br />
+
+@if (ViewBag.comments.Count == 0)
+{
+    <h1>No comment requests</h1>
+}
+else
+{
+    <table border="1">
+        <tr>
+            <td>Comment text</td>
+            <td>Rating</td>
+            <td>User</td>
+            <td>Fitness center</td>
+        </tr>
+        @foreach (var comment in ViewBag.comments)
+        {
+            <tr>
+                <td>@comment.CommentText</td>
+                <td>@comment.Rating</td>
+                <td>@comment.CreatorUsername</td>
+                <td>@comment.FCenterId</td>
+                <td>
+                    <form method="post" action="~/Vlasnik/ChangeCommentState">
+                        <input type="hidden" value="ACCEPTED" name="commentState" />
+                        <input type="hidden" value="@comment.FCenterId" name="centerName" />
+                        <input type="submit" value="ACCEPT" />
+                    </form>
+                </td>
+                <td>
+                    <form method="post" action="~/Vlasnik/ChangeCommentState">
+                        <input type="hidden" value="DECLINED" name="commentState" />
+                        <input type="hidden" value="@comment.FCenterId" name="centerName" />
+                        <input type="submit" value="DECLINE" />
+                    </form>
+                </td>
+            </tr>
+        }
+    </table>
+}

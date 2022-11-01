@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "ModifyGroupTraining";
+}
+
+<h2>Modify Group Training</h2>
+<a href="~/Home/Index">HOME</a>
+<br />
+<p style="color : red">@ViewBag.Error</p>
+<form action="~/Trener/ModifyTrainingAction" method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>
+                <input type="text" name="name" value="@ViewBag.training.Name" readonly />
+            </td>
+        </tr>
+        <tr>
+            <td>Training type:</td>
+            <td>
+                <input type="text" name="trType" value="@ViewBag.training.TrainingType" />
+            </td>
+        </tr>
+        <tr>
+            <td>Training duration (in minutes):</td>
+            <td>
+                <input type="text" name="trDuration" value="@ViewBag.training.TrainingDuration" />
+            </td>
+        </tr>
+        <tr>
+            <td>Training date and time:</td>
+            <td>
+                <input type="datetime-local" name="trDate" value="@ViewBag.training.TrainingDateTime" />
+            </td>
+        </tr>
+        <tr>
+            <td>Max participants:</td>
+            <td>
+                <input type="datetime" name="maxParticipants" value="@ViewBag.training.MaxParticipants" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Modify" />
+            </td>
+        </tr>
+    </table>
+</form>

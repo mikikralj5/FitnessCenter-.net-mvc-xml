@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "AddGroupTraining";
+}
+
+<h2>Add Group Training</h2>
+<a href="~/Home/Index">HOME</a>
+<br />
+<p style="color : red">@ViewBag.Error</p>
+<form action="~/Trener/AddNewGroupTraining" method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td>
+                <input type="text" name="name" />
+            </td>
+        </tr>
+        <tr>
+            <td>Training type:</td>
+            <td>
+                <input type="text" name="trType" />
+            </td>
+        </tr>
+        <tr>
+            <td>Training duration (in minutes):</td>
+            <td>
+                <input type="text" name="trDuration" required onkeypress="return /[0-9]/i.test(event.key)"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Training date and time (must be 3 days from now):</td>
+            <td>
+                <input type="datetime-local" name="trDate" />
+            </td>
+        </tr>
+        <tr>
+            <td>Max participants:</td>
+            <td>
+                <input type="datetime" name="maxParticipants" required onkeypress="return /[0-9]/i.test(event.key)"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Add" />
+            </td>
+        </tr>
+    </table>
+</form>

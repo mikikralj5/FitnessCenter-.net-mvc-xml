@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "AddComment";
+}
+
+<h2>Add new Comment</h2>
+<a href="~/Home/Index">HOME</a>
+<br />
+@if (ViewBag.canAddComment)
+{
+    <p style="color : red">@ViewBag.Error</p>
+    <form action="~/Posetilac/AddCommentAction" method="post">
+        <table>
+            <tr>
+                <td>Text:</td>
+                <td>
+                    <input type="text" name="cmntText" />
+                    <input type="hidden" name="centerName" value="@ViewBag.centerName" />
+                </td>
+            </tr>
+            <tr>
+                <td>Rating:</td>
+                <td>
+                    <select name="cmntRating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Add" />
+                </td>
+            </tr>
+        </table>
+    </form>
+}
+else
+{
+    <h1>You can't add comment for this center, because you haven't visited it</h1>
+}

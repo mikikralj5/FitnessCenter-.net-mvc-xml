@@ -1,0 +1,149 @@
+﻿
+@{
+    ViewBag.Title = "CenterDetails";
+}
+
+<h2>Center Details</h2>
+<a href="~/Home/Index">HOME</a>
+<br />
+<table>
+    <tr>
+        <td>Name:</td>
+        <td>
+            @ViewBag.center.Name
+        </td>
+    </tr>
+    <tr>
+        <td>Street:</td>
+        <td>
+            @ViewBag.center.Adress
+        </td>
+    </tr>
+
+
+    <tr>
+        <td>Founded:</td>
+        <td>
+            @ViewBag.center.Year
+        </td>
+    </tr>
+    <tr>
+        <td>Monthly price:</td>
+        <td>
+            @ViewBag.center.MonthlyPrice"
+        </td>
+    </tr>
+    <tr>
+        <td>Yearly price:</td>
+        <td>
+            @ViewBag.center.YearlyPrice
+        </td>
+    </tr>
+    <tr>
+        <td>One training price:</td>
+        <td>
+            @ViewBag.center.OneTrainingPrice
+        </td>
+    </tr>
+    <tr>
+        <td>Group training price:</td>
+        <td>
+            @ViewBag.center.GroupTrainingPrice
+        </td>
+    </tr>
+    <tr>
+        <td>Price with fitness trainer:</td>
+        <td>
+            @ViewBag.center.AssistantTrainingPrice
+        </td>
+    </tr>
+</table>
+<br />
+<br />
+
+
+@if (ViewBag.trainings.Count > 0)
+{
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td>TrainingType</td>
+            <td>Training date and time</td>
+            <td>Training duration (in minutes)</td>
+            <td>Max participants</td>
+            <td>Number of current participants</td>
+        </tr>
+        @foreach (var item in ViewBag.trainings)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.TrainingType</td>
+                <td>@item.TrainingDateTime</td>
+                <td>@item.TrainingDuration</td>
+                <td>@item.MaxParticipants</td>
+                <td>@item.Participants.Count</td>
+                @if (ViewBag.user != null && ViewBag.user.UserRole.ToString() == "POSETILAC")
+                {
+                    bool showBtn = true;
+
+                    if (item.Participants != null)
+                    {
+                        foreach (var name in item.Participants)
+                        {
+                            if (name == ViewBag.user.Username)
+                            {
+                                showBtn = false;                              
+                                <td>signed up</td>
+                                break;
+                            }
+                        }
+                    }
+
+                    if (item.Participants.Count == item.MaxParticipants)
+                    {
+                        <td>SOLDOUT</td>
+                        showBtn = false;
+                    }
+
+                    if (showBtn)
+                    {
+                        <td>
+                            <form method="post" action="~/Posetilac/SignUpForTraining">
+                                <input type="hidden" value="@item.Name" name="trainingName" />
+                                <input type="submit" value="Sing up" />
+                            </form>
+                        </td>
+                    }
+
+                }
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h1>No trainings</h1>
+}
+<br />
+@if (ViewBag.comments.Count == 0)
+{
+    <h1>No comments</h1>
+}
+else
+{
+    <table border="1">
+        <tr>
+            <td>Comment text</td>
+            <td>Rating</td>
+            <td>User</td>
+        </tr>
+        @foreach (var comment in ViewBag.comments)
+        {
+            <tr>
+                <td>@comment.CommentText</td>
+                <td>@comment.Rating</td>
+                <td>@comment.CreatorUsername</td>
+            </tr>
+        }
+    </table>
+}

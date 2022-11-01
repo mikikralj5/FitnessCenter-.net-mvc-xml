@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+
+<h2>Login</h2>
+<p style="color : red">@ViewBag.Error</p>
+<form action="~/Auth/LoginUser" method="post">
+    <table>
+        <tr>
+            <td>Korisnicko Ime:</td>
+            <td><input type="text" name="username" /></td>
+        </tr>
+        <tr>
+            <td>Lozinka:</td>
+            <td><input type="password" name="password" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="LogIn" />
+            </td>
+        </tr>
+    </table>
+</form>
+<br />
+<a href="~/Home/Index">Continue without login</a>
+<br />
+<a href="~/Auth/Register">Register</a>
+<br />

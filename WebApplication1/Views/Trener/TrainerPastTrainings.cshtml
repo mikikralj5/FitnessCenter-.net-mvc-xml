@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewBag.Title = "TrainerPastTrainings";
+}
+
+<h2>Trainer Past Trainings</h2>
+<a href="~/Home/Index">HOME</a>
+<br />
+
+@if (ViewBag.trainings.Count == 0)
+{
+    <h1>No trainings</h1>
+}
+else
+{
+    <table border="1">
+        <tr>
+            <td>Name</td>
+            <td>Training type</td>
+            <td>Fitness center</td>
+            <td>Training duration</td>
+            <td>Training date and time</td>
+            <td>Max participants</td>
+        </tr>
+        @foreach (var item in ViewBag.trainings)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.TrainingType</td>
+                <td>@item.FCenterId</td>
+                <td>@item.TrainingDuration</td>
+                <td>@item.TrainingDateTime</td>
+                <td>@item.MaxParticipants</td>
+                <td>
+                    <form method="post" action="~/Trener/ParticipantList">
+                        <input type="hidden" value="@item.Name" name="trainingName" />
+                        <input type="submit" value="Participants" />
+                    </form>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+
+    <br />
+    <form action="~/Trener/SearchTrainings" method="post">
+        <table border="1">
+            <tr>
+                <th colspan="2" style="font-size : 150%; text-align : center; background-color : lightgreen">
+                    Search
+                </th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>
+                    <input type="text" name="nameSearch" />
+                </td>
+            </tr>
+            <tr>
+                <td>Training type</td>
+                <td>
+                    <input type="text" name="typeSearch" />
+                </td>
+            </tr>
+            <tr>
+                <td>Date and time</td>
+                <td>
+                    Min: <input type="datetime-local" name="dateSearchMin" />
+                    Max: <input type="datetime-local" name="dateSearchMax" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="SEARCH" />
+                </td>
+            </tr>
+        </table>
+    </form>
+
+
+    <br />
+    <form action="~/Trener/NameSort" method="post">
+        Sort by name
+        <select id="type" name="param" required>
+            <option value="ASCENDING">Ascending</option>
+            <option value="DESCENDING">Descending</option>
+        </select>
+        <input type="submit" value="Sort" />
+    </form>
+    <br />
+    <form action="~/Trener/DateSort" method="post">
+        Sort by date
+        <select id="type" name="param" required>
+            <option value="ASCENDING">Ascending</option>
+            <option value="DESCENDING">Descending</option>
+        </select>
+        <input type="submit" value="Sort" />
+    </form>
+    <br />
+    <form action="~/Trener/TypeSort" method="post">
+        Sort training type
+        <select id="type" name="param" required>
+            <option value="ASCENDING">Ascending</option>
+            <option value="DESCENDING">Descending</option>
+        </select>
+        <input type="submit" value="Sort" />
+    </form>
+    <br />
+    <form action="~/Trener/TrainerPastTrainings" method="post">
+        <input type="submit" value="Clear filter" />
+    </form>
+    <br />
+
+}
